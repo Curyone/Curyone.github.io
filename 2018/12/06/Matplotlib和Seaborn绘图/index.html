@@ -18,7 +18,7 @@
 <meta property="og:image" content="https://curyone.github.io/2018/12/06/Matplotlib和Seaborn绘图/1_sns.jpg">
 <meta property="og:image" content="https://curyone.github.io/2018/12/06/Matplotlib和Seaborn绘图/2_sns.png">
 <meta property="og:image" content="https://curyone.github.io/2018/12/06/Matplotlib和Seaborn绘图/3_sns.jpg">
-<meta property="og:updated_time" content="2018-12-06T08:31:12.846Z">
+<meta property="og:updated_time" content="2018-12-06T08:38:00.053Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Matplotlib和Seaborn绘图">
 <meta name="twitter:description" content="使用数据为鸢尾花经典数据集 散点图:  1234567891011fig,ax=plt.subplots()for kind in iris_data[&amp;quot;Species&amp;quot;].unique():    x_data=iris_data[iris_data[&amp;quot;Species&amp;quot;]==kind][&amp;quot;SepalLengthCm&amp;quot;]    y_dat">
@@ -93,11 +93,10 @@
       
         <h3 id="使用数据为鸢尾花经典数据集"><a href="#使用数据为鸢尾花经典数据集" class="headerlink" title="使用数据为鸢尾花经典数据集"></a>使用数据为鸢尾花经典数据集</h3><ol>
 <li><p><strong>散点图:</strong></p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">fig,ax=plt.subplots()</span><br><span class="line">for kind in iris_data[&quot;Species&quot;].unique():</span><br><span class="line">    x_data=iris_data[iris_data[&quot;Species&quot;]==kind][&quot;SepalLengthCm&quot;]</span><br><span class="line">    y_data=iris_data[iris_data[&quot;Species&quot;]==kind][&quot;SepalWidthCm&quot;]</span><br><span class="line">    ax.scatter(x_data,y_data)</span><br><span class="line">    ax.set_xlabel(&quot;SepalLength&quot;)</span><br><span class="line">    ax.set_ylabel(&quot;SepalWidth&quot;)</span><br><span class="line">    ax.set_title(&quot;SepalLength and SepalWidth Scatter&quot;,y=1.01,fontsize= 人常常为活得更好而努力拼搏，又因为努力拼搏而给自己不断增添各种风险，当身体完全透支或生命将提前结束时，才发现这不叫“活得更好”，甚至连再回头想想的时间都没有了。 。 )</span><br><span class="line">    ax.legend([&apos;Iris-setosa&apos;, &apos;Iris-versicolor&apos;, &apos;Iris-virginica&apos;])</span><br><span class="line">plt.savefig(&quot;1.png&quot;)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-<p> <center><img src="//curyone.github.io/2018/12/06/Matplotlib和Seaborn绘图/1_plt.jpg" alt="1_plt"></center></p>
- <font size="2"><strong>图一: 不同种类关于花萼长度和宽度的散点图(Matplotlib实现)</strong></font>
-
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sns.lmplot(&apos;SepalLengthCm&apos;,&apos;SepalWidthCm&apos;,iris_data,hue=&apos;Species&apos;,fit_reg=False,markers=[&apos;^&apos;,&apos;*&apos;,&apos;+&apos;])</span><br><span class="line">plt.savefig(&apos;1_sns.jpg&apos;)</span><br></pre></td></tr></table></figure>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">fig,ax=plt.subplots()</span><br><span class="line">for kind in iris_data[&quot;Species&quot;].unique():</span><br><span class="line">    x_data=iris_data[iris_data[&quot;Species&quot;]==kind][&quot;SepalLengthCm&quot;]</span><br><span class="line">    y_data=iris_data[iris_data[&quot;Species&quot;]==kind][&quot;SepalWidthCm&quot;]</span><br><span class="line">    ax.scatter(x_data,y_data)</span><br><span class="line">    ax.set_xlabel(&quot;SepalLength&quot;)</span><br><span class="line">    ax.set_ylabel(&quot;SepalWidth&quot;)</span><br><span class="line">    ax.set_title(&quot;SepalLength and SepalWidth Scatter&quot;,y=1.01,fontsize= 12 )</span><br><span class="line">    ax.legend([&apos;Iris-setosa&apos;, &apos;Iris-versicolor&apos;, &apos;Iris-virginica&apos;])</span><br><span class="line">plt.savefig(&quot;1.png&quot;)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p> <center><img src="//curyone.github.io/2018/12/06/Matplotlib和Seaborn绘图/1_plt.jpg" width="70%"></center></p>
+<pre><code>&lt;font size=2&gt;**图一: 不同种类关于花萼长度和宽度的散点图(Matplotlib实现)**&lt;/font&gt;
+</code></pre> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sns.lmplot(&apos;SepalLengthCm&apos;,&apos;SepalWidthCm&apos;,iris_data,hue=&apos;Species&apos;,fit_reg=False,markers=[&apos;^&apos;,&apos;*&apos;,&apos;+&apos;])</span><br><span class="line">plt.savefig(&apos;1_sns.jpg&apos;)</span><br></pre></td></tr></table></figure>
 <p> <center><img src="//curyone.github.io/2018/12/06/Matplotlib和Seaborn绘图/1_sns.jpg" alt="1_sns"><br> </center></p>
  <font size="2"><strong>图二: 不同种类关于花萼长度和宽度的散点图(seaborn实现)</strong></font>
 </li>
@@ -117,7 +116,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://curyone.github.io/2018/12/06/Matplotlib和Seaborn绘图/" data-id="cjpccb9so00017kzbh8uctfv9" class="article-share-link">Share</a>
+      <a data-url="https://curyone.github.io/2018/12/06/Matplotlib和Seaborn绘图/" data-id="cjpccebfj00018kzbp22t8mj8" class="article-share-link">Share</a>
       
       
     </footer>
